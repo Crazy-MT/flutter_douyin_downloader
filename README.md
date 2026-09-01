@@ -17,7 +17,7 @@ Flutter/GetX 小工具，用于把抖音分享文本里的视频保存为本地�
 ## 环境
 
 - Flutter：3.47.1，推荐使用仓库内 `.fvmrc`。
-- Android 构建需要 JDK 17 或更高版本；必要时在 `android/gradle.properties` 配置 `org.gradle.java.home`。
+- Android 构建需要 JDK 17 或更高版本；本地用 `JAVA_HOME` 指定 JDK，不把本机 Java 路径写进仓库。
 
 ## 代码入口
 
