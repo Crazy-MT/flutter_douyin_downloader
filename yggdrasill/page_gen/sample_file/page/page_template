@@ -1,0 +1,51 @@
+import '$PageControllerFileName.dart';
+import 'package:code_zero/common/components/status_page/status_page.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:code_zero/app/routes/app_routes.dart';
+import 'package:code_zero/common/colors.dart';
+import 'package:code_zero/common/components/common_app_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class $PageClassName extends GetView<$PageNameController> {
+  const $PageClassName({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+       backgroundColor: ColorsApp.bg_gray,
+       appBar: CommonAppBar(
+            titleText: '$PageName',
+            centerTitle: true,
+            actions: [
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: InkWell(
+                    onTap: () async {},
+                    child: const Icon(Icons.add, color: Colors.white)),
+              )
+            ],
+          ),
+      body: Obx(
+        () => FTStatusPage(
+          type: controller.pageStatus.value,
+          enablePullDown: true,
+          enablePullUp: true,
+          controller: controller.refreshController,
+          onLoading: () {
+            //controller.getCommissionRecord(isRefresh: false);
+          },
+          onRefresh: () async {
+            //controller.getCommissionRecord();
+          },
+          errorMsg: controller.errorMsg.value,
+          builder: (BuildContext context) {
+            return Center(
+              child: Text("This page is :${controller.pageName}"),
+            );
+          },
+        ),
+      ),
+    );
+  }
+}

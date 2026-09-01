@@ -1,0 +1,78 @@
+import 'package:get/get.dart';
+import 'package:code_zero/common/components/status_page/status_page.dart';
+import 'package:code_zero/network/l_request.dart';
+import 'package:code_zero/network/net_constant.dart';
+import 'package:code_zero/utils/utils.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:pull_to_refresh/pull_to_refresh.dart';
+
+class $PageNameController extends GetxController {
+  final pageName = '$PageName'.obs;
+  final errorMsg = "".obs;
+  final pageStatus = FTStatusPageType.loading.obs;
+
+  //ScrollController scrollController = ScrollController();
+  //RxList<InviteRecordDto?> inviteProductList = RxList<InviteRecordDto?>();
+  final RefreshController refreshController = new RefreshController();
+
+  int currentPage = 0;
+
+  @override
+  void onInit() {
+    super.onInit();
+    initData();
+  }
+
+  initData(){
+    pageStatus.value = FTStatusPageType.success;
+    //getCommissionRecord();
+  }
+
+  void setPageName(String newName){
+    pageName.value = newName;
+  }
+
+  @override
+  void onClose() {}
+
+  // 下拉刷新、上拉加载的示例
+  /*
+    getCommissionRecord({bool isRefresh = true}) async {
+      if (isRefresh) {
+        currentPage = 1;
+      }
+      await LRequest.instance.request<InviteRecordResponseDto>(
+          url: NetConstant.HOST +
+              "/user/invite/list?pageNum=$currentPage",
+          t: InviteRecordResponseDto(),
+          requestType: RequestType.GET,
+          errorBack: (errorCode, errorMsg, expMsg) {
+            refreshController.refreshFailed();
+            Utils.showToastMsg("获取列表失败：${errorCode == -1 ? expMsg : errorMsg}");
+          },
+          isShowLoading: false,
+          onSuccess: (result) {
+            var model = result.value;
+            if (model == null || model.list == null) {
+              refreshController.refreshCompleted();
+              refreshController.loadComplete();
+              return;
+            }
+            if (isRefresh) {
+              inviteProductList.clear();
+              currentPage++;
+            } else {
+              currentPage++;
+            }
+            inviteProductList.addAll(model.list!);
+            refreshController.refreshCompleted();
+            refreshController.loadComplete();
+
+            if ((model.count ?? 0) <= (inviteProductList.length)) {
+              refreshController.loadNoData();
+            }
+          });
+    }
+  */
+
+}

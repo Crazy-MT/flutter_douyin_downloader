@@ -1,0 +1,26 @@
+import 'package:code_zero/app/routes/app_routes.dart';
+import 'package:flutter/cupertino.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/parse_route.dart';
+
+import '../routes/app_pages.dart';
+
+class EnsureAuthMiddleware extends GetMiddleware {
+  @override
+  RouteSettings? redirect(String? route) {
+    return null;
+  }
+}
+
+/*
+class EnsureNotAuthedMiddleware extends GetMiddleware {
+  @override
+  RouteSettings? redirect(String? route) {
+    if (userHelper.userToken.isNotEmpty) {
+      return const RouteSettings(name: RoutesID.LOGIN_PAGE);
+    } else {
+      return null;
+    }
+  }
+}
+*/

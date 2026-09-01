@@ -1,0 +1,38 @@
+import 'dart:ui';
+
+import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:oktoast/oktoast.dart';
+
+import '../common/colors.dart';
+
+class Utils {
+  static showToastMsg(String msg) {
+    showToastWidget(
+      Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(4),
+          color: ColorsApp.text_dark,
+        ),
+        margin: const EdgeInsets.only(left: 53, right: 53),
+        padding: const EdgeInsets.all(15),
+        child: Text(
+          msg,
+          style: TextStyle(
+            fontSize: 15.0,
+            fontWeight: FontWeight.normal,
+            color: Colors.white,
+          ),
+          strutStyle: const StrutStyle(
+            forceStrutHeight: true,
+            leading: 0.4,
+          ),
+        ),
+      ),
+      position:
+      const ToastPosition(align: Alignment.bottomCenter, offset: -120),
+      dismissOtherToast: true,
+      duration: const Duration(seconds: 2),
+    );
+  }
+}
