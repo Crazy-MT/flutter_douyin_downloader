@@ -18,7 +18,7 @@ dependencies:
   dio: 5.2.1
   sp_util: 2.0.3
   oktoast: ^3.4.0
-  flutter_html: ^3.0.0-beta.2
+  flutter_html: 3.0.0-beta.2
   path_provider: ^2.1.5
   path: ^1.9.0
 #  flutter_pickers: 2.1.8
