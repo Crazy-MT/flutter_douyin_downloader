@@ -32,9 +32,6 @@ jobs:
           flutter-version: ${{ env.FLUTTER_VERSION }}
           cache: true
 
-      - name: Install Android NDK
-        run: yes | sdkmanager "ndk;27.0.12077973"
-
       - name: Get dependencies
         run: flutter pub get
 
