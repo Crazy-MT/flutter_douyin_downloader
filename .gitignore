@@ -112,7 +112,9 @@ app.*.map.json
 
 ios/Pods/
 
-/windows/flutter/
+/windows/flutter/ephemeral/
+/windows/flutter/generated_plugin_registrant.*
+/windows/flutter/generated_plugins.cmake
 
 assets/sherpa-onnx-streaming-zipformer-bilingual-zh-en-2023-02-20/
 assets/asr_models/sherpa-onnx-sense-voice-zh-en-ja-ko-yue-int8-2024-07-17/model.int8.onnx
